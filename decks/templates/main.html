@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Almacen de mazos de MTG" />
+        <meta name="author" content="thevariator04" />
+
+        <title>{% block tittle %} {% endblock %}</title>
+
+        <!-- Bootstrap -->
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript%}
+
+        <!-- CSS -->
+        {% load static %}
+        <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+        <!--  Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static '/images/site.webmanifest' %}">
+
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        {% csrf_token %}
+        {% block content %} {% endblock %}
+        <footer class="footer text-center footer-dark">
+                <hr class="mx-5">
+                <p>hecho ❤️ por <b>thv4</b> - <a
+                        href="https://github.com/thv4/MTG-WEB" target="_blank">Codigo fuente</a>
+                </p>
+            </footer>
+
+    </body>
+</html>

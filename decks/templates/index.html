@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 text-center w-50 mx-auto">
+    <main class="px-3">
+        <img class="mb-4" src="{% static '/images/logo.svg' %}" width="300" height="300">
+        <h3 class="mb-4">Ah... <span class="user-name">{{ user }}</span>, he sentido tu llegada en los vientos del Æter. La magia te espera.</h3>
+        <p class="lead">
+            <button type="button" class="btn btn-outline-light">Buscar</button>
+            <button type="button" class="btn btn-outline-light">Añadir</button>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-light">Cerrar sesión</button>
+            </form>
+        </p>
+    </main>
+</div>
+{% endblock %}
